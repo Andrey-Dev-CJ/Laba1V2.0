@@ -1,17 +1,14 @@
 ﻿#include <iostream>
+#include<string>
 #include"Yahr.h"
 #include"Submarine.h"
 #include"Speedboat.h"
-#include<iostream>
-#include<string>
 #include"MyDB.h"
 using namespace std;
 
 int main()
 {
-    //создать функцию для работы со строками (без string)...
-    setlocale(LC_ALL, "rus");
-
+	setlocale(LC_ALL, "rus");
 
 	MyDB BD;
 
@@ -49,7 +46,8 @@ int main()
 				cout << "1. Показать яхты\n";
 				cout << "2. Добавить яхты\n";
 				cout << "3. Удалить яхты\n";
-				cout << "4. Выйти в меню\n";
+				cout << "4. Изменить данные\n";
+				cout << "5. Выйти в меню\n";
 				cout << "вы выбрали - ";
 				cin >> inp;
 				inputMy(inp);
@@ -69,6 +67,10 @@ int main()
 					inputMy(inp);
 					BD.removeYaht(inp);
 					break;
+				case 4:
+					BD.printsYaht();
+					BD.changeYaht();
+					break;
 				default:
 					fl = false;
 					break;
@@ -82,7 +84,8 @@ int main()
 				cout << "1. Показать подлодки\n";
 				cout << "2. Добавить подлодки\n";
 				cout << "3. Удалить подлодки\n";
-				cout << "4. Выйти в меню\n";
+				cout << "4. Изменить данные\n";
+				cout << "5. Выйти в меню\n";
 				cout << "вы выбрали - ";
 				cin >> inp;
 				inputMy(inp);
@@ -101,6 +104,10 @@ int main()
 					cin >> inp;
 					inputMy(inp);
 					BD.removeSub(inp);
+					break;
+				case 4:
+					BD.printsSub();
+					BD.changeSub();
 					break;
 				default:
 					fl = false;
@@ -134,6 +141,10 @@ int main()
 					cin >> inp;
 					BD.removeSboat(inp);
 					break;
+				case 4:
+					BD.printSboat();
+					BD.changeSboat();
+					break;
 				default:
 					fl = false;
 					break;
@@ -150,5 +161,5 @@ int main()
 			break;
 		}
 	}
-    return 0;
+	return 0;
 }

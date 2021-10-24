@@ -19,7 +19,7 @@ public:
 	int getSize();
 
 	List<T>& operator=(const List<T>& obj);
-	T operator[](const int index);
+	T& operator[](const int index);
 
 	void append(T val);
 	///chek

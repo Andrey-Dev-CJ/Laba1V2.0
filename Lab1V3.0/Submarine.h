@@ -17,13 +17,14 @@ class Submarine :
 
 
 public:
-	void save();
-	void print();
-	void init();
+	void save()override;
+	void print()override;
+	void change() override;
+	void init()override;
 	explicit Submarine();
 	Submarine(int fl);
 	Submarine(string str);
-	Submarine(int lenght,int widht,int crew, int time, int speedMax, int armament);
+	Submarine(int lenght, int widht, int crew, int time, int speedMax, int armament);
 	Submarine(const Submarine& other);
 };
 

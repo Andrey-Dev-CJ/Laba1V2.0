@@ -2,7 +2,7 @@
 #include "Element.h"
 
 template<class T>
-T Element<T>::getVal() {
+T& Element<T>::getVal() {
 	return val;
 }
 

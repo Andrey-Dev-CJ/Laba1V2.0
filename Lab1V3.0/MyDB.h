@@ -29,10 +29,14 @@ public:
 	void removeSboat(int i);
 	void removeSub(int i);
 
-	
+
 	int getCntYahts();
 	int getCntSub();
 	int getCntSboat();
+
+	void changeYaht();
+	void changeSub();
+	void changeSboat();
 
 };
 

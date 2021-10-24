@@ -8,7 +8,7 @@ private:
 	Element<T>* adr;
 
 public:
-	T getVal();
+	T& getVal();
 	Element<T>* getAdr();
 	void setVal(T val);
 	void setAdr(Element<T>* adr);

@@ -6,13 +6,13 @@ void Yaht::save()
 {
 	string path = "Yaht.obj";
 	ofstream fout;
-	fout.open(path,ofstream::app);
+	fout.open(path, ofstream::app);
 	if (!fout.is_open()) {
 		cout << "file wasn't opened\n";
 	}
 	else {
 		//cout << "file was open\n";
-		Yaht ya(this->type,this->name,this->mission,this->speedMax, this->length, this->crew);
+		Yaht ya(this->type, this->name, this->mission, this->speedMax, this->length, this->crew);
 		fout.write((char*)&ya, sizeof(Yaht));
 	}
 	fout.close();
@@ -28,6 +28,12 @@ void Yaht::print()
 	cout << "Max speed: " << this->speedMax << endl;
 	cout << "Lenght: " << this->length << endl;
 	cout << "Count of crew: " << this->crew << endl;
+}
+
+void Yaht::change()
+{
+	this->print();
+	this->init();
 }
 
 //void Yaht::recovery()
@@ -61,7 +67,7 @@ void Yaht::init()
 	cin >> this->name;
 
 	cout << "введите назначение " << endl;
-	cin>>this->mission;
+	cin >> this->mission;
 
 
 	cout << "введите максимальную скорость " << endl;
@@ -170,7 +176,7 @@ Yaht::Yaht(string str)
 }
 
 
-Yaht::Yaht(char* type,char* name,char*mission, int speedMax, int length, int crew)
+Yaht::Yaht(char* type, char* name, char* mission, int speedMax, int length, int crew)
 {
 
 	//this->type = type;
@@ -209,9 +215,9 @@ Yaht::Yaht(int fl)
 Yaht::Yaht(const Yaht& other)
 {
 
-	this->speedMax=other.speedMax;
-	this->length= other.length;
-	this->crew=other.crew;
+	this->speedMax = other.speedMax;
+	this->length = other.length;
+	this->crew = other.crew;
 
 	int i = 0;
 	do {
@@ -232,5 +238,5 @@ Yaht::Yaht(const Yaht& other)
 		i++;
 	} while (other.mission[i] != '\0');
 	this->mission[i] = '\0';
-	
+
 }

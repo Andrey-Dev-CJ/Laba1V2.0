@@ -16,12 +16,13 @@ private:
 	int length;
 	int crew;
 public:
-	void save();
-	void print();
-	void init();
+	void save() override;
+	void print()override;
+	void change() override;
+	void init()override;
 	explicit Yaht();
 	Yaht(string str);
-	Yaht(char*type,char*name,char*mission ,int speedMax, int length, int crew);
+	Yaht(char* type, char* name, char* mission, int speedMax, int length, int crew);
 	Yaht(int fl);
 	Yaht(const Yaht& other);
 

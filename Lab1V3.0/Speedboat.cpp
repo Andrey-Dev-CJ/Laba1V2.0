@@ -14,10 +14,16 @@ void Speedboat::save()
 	else {
 		//cout << "file was open\n";
 		drive.getData(i, j, s);
-		Speedboat sb(this->mission,this->materials,i,j,s,this->speedMax,this->crew);
+		Speedboat sb(this->mission, this->materials, i, j, s, this->speedMax, this->crew);
 		fout.write((char*)&sb, sizeof(Speedboat));
 	}
 	fout.close();
+}
+
+void Speedboat::change()
+{
+	this->print();
+	this->init();
 }
 
 //void Speedboat::recovery()
@@ -72,11 +78,11 @@ void Speedboat::init()
 	cout << "введите материалы" << endl;
 	cin >> this->materials;
 
-	cout << "¬ведите максимальную скорость" << endl;
+	cout << "введите максимальную скорость" << endl;
 	cin >> this->speedMax;
 	inputMy(this->speedMax);
 
-	cout << "¬ведите экипаж " << endl;
+	cout << "введите экипаж " << endl;
 	cin >> this->crew;
 	inputMy(this->crew);
 }
@@ -193,12 +199,12 @@ Speedboat::Speedboat(string str)
 
 Speedboat::Speedboat()
 {
-	
+
 	this->mission[0] = '0';
 	this->mission[1] = '\0';
 	this->materials[0] = '0';
 	this->materials[1] = '\0';
-	char s[1] = {'0'};
+	char s[1] = { '0' };
 	this->drive.setData(0, 0, s);
 	this->speedMax = 0;
 	this->crew = 0;
@@ -254,8 +260,8 @@ Speedboat::Speedboat(const Speedboat& other)
 	char s[80];
 
 	auto dr = other.drive;
-	dr.getData(i,j,s);
-	this->drive.setData(i, j,s);
+	dr.getData(i, j, s);
+	this->drive.setData(i, j, s);
 
 
 }

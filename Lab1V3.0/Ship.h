@@ -12,10 +12,10 @@ class Ship
 
 public:
 
-	virtual void save()=0;
-	//virtual void recovery() = 0;
+	virtual void save() = 0;
+	virtual void change() = 0;
 	virtual void print() = 0;
-	virtual void init()= 0;
+	virtual void init() = 0;
 
 
 };

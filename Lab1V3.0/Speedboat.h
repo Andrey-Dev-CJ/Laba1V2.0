@@ -35,7 +35,7 @@ class Speedboat :
 			weght = this->weght;
 			int i = 0;
 			do {
-				country[i] =this->country[i];
+				country[i] = this->country[i];
 				i++;
 			} while (this->country[i] != '\0');
 			country[i] = '\0';
@@ -51,14 +51,14 @@ class Speedboat :
 
 
 public:
-	void save();
-	//void recovery() override;
-	void print();
-	void init();
+	void save()override;
+	void change() override;
+	void print()override;
+	void init()override;
 	Speedboat(string str);
 	explicit Speedboat();
 	Speedboat(int fl);
-	Speedboat(char* missions, char*materials, int life,int weight,char*country,int maxspeed,int crew);
+	Speedboat(char* missions, char* materials, int life, int weight, char* country, int maxspeed, int crew);
 	Speedboat(const Speedboat& other);
 };
 

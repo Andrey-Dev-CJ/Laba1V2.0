@@ -46,6 +46,14 @@ void Submarine::print()
 	cout << "Count of arnamet: " << this->armament << endl;
 }
 
+void Submarine::change()
+{
+
+	this->print();
+	this->init();
+
+}
+
 void Submarine::init()
 {
 	cout << "введите длину" << endl;
@@ -147,7 +155,7 @@ Submarine::Submarine(int lenght, int widht, int crew, int time, int speedMax, in
 {
 	this->length = lenght;
 	this->width = widht;
-	this->crew= crew;
+	this->crew = crew;
 	this->time = time;
 	this->speedMax = speedMax;
 	this->armament = armament;
